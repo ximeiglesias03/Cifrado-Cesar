@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descifrado Cesar</title>
+</head>
+<body>
+ 
+ <script>
+    //Montoya Iglesias Ximena
+    let abc=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    let texto_original=prompt("Ingresa un texto en minúsculas");
+    let key=parseInt(prompt("Ingresa la llave"));
+    let texto_encriptado = [];
+
+    texto_original = texto_original.split("");
+
+    for(let element of texto_original)
+    {
+        let index = abc.indexOf(element);
+
+        if(element != "")
+        {
+            if (index - key >= abc.length)
+            {
+                texto_encriptado.push(abc[(index - key) + abc.length]);
+            } else {
+                texto_encriptado.push(abc[index - key]);
+                    }
+        } else {
+            texto_encriptado.push(element);
+        }
+    }
+    console.log(texto_encriptado.join(""));
+
+ </script>  
+ 
+</body>
+</html>
